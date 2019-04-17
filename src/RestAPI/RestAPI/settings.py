@@ -26,7 +26,9 @@ SECRET_KEY = '4!g$t&#rpnk6^*m69@i-ht6p+j*@^1gth5#5=p&n6z37n#rkvw'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# APPEND_TRAILING_SLASH = True
 
+# AUTH_USER_MODEL = 'updates.CustomUser'
 
 # Application definition
 
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'updates',
+    'api',
 ]
 
 MIDDLEWARE = [
