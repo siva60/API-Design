@@ -13,12 +13,17 @@ urls:
 http://127.0.0.1:8000/admin/
 
 http://127.0.0.1:8000/updates/examples/
+
 http://127.0.0.1:8000/updates/cbv/
+
 http://127.0.0.1:8000/updates/cbv2/
+
 http://127.0.0.1:8000/updates/serialize/
+
 http://127.0.0.1:8000/updates/serialize-detail/
 
 http://127.0.0.1:8000/api/
+
 http://127.0.0.1:8000/api/<id>
 
 #########################################
