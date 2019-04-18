@@ -26,7 +26,7 @@ class UpdateModelDetailAPIView(HttpResponseMixin, CSRFExemptMixin, View):
         return None
 
     def get(self, request, id, *args, **kwargs):
-        obj = self.get_object(id=id)
+        obj = self.get_object(id=id) 
         if obj is None:
             error_data = json.dumps({'message': "Data not found with that ID! Could not Update"})
             return self.render_to_response(error_data, status=404)
