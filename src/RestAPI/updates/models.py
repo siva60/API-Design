@@ -8,7 +8,12 @@ import json
 def upload_update_image(instance, filename):
     return "updates/{user}/{filename}".format(user=instance.user, filename=filename)
 
-
+##########################################
+#  https://simpleisbetterthancomplex.com/tips/2016/08/16/django-tip-11-custom-manager-with-chainable-querysets.html
+#  Django: models.Manger -  Manger is the interface that Interact with the db
+#          models.Queryset - 
+#          models.Model
+##########################################
 # custom queryset manager
 class UpdateQueryset(models.QuerySet):
     # def serialize(self):
