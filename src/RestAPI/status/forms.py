@@ -12,11 +12,18 @@ class StatusForm(forms.ModelForm):
             'image',
         ]
 
+    def clean_content(self):
+        content = self.cleaned_data.get('content')
+        if len(content) > 240 :
+            raise forms.ValidationError("Content is too long")
+        return content
+    
     def clean(self):
-        cleaned_data = super().clean()
-        content = cleaned_data.get('content')
-        if "h" not in content:
-            msg = "Must put 'help' in subject when cc'ing yourself."
-            self.add_error('cc_myself', msg)
-            self.add_error('subject', msg)
-
+        data = self.cleaned_data
+        content = data.get('content', None)
+        if content == '':
+            content = None
+        image = data.get('image', None)
+        if content is None and image is None:
+            raise forms.ValidationError('Content or Image is required')
+        return super().clean()  # ensures any validation logic in parent classes is maintained.

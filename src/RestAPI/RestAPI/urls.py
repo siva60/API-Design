@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'updates/', include('updates.urls')),
     url(r'api/', include('api.urls')),
+    url(r'^$', include('updates.urls')),
 ]
