@@ -8,7 +8,7 @@
 3. PUT( or Patch)
 4. DELETE
 
-
+#############################################################################
 urls:
 http://127.0.0.1:8000/admin/
 
@@ -25,6 +25,14 @@ http://127.0.0.1:8000/updates/serialize-detail/
 http://127.0.0.1:8000/api/
 
 http://127.0.0.1:8000/api/<id>
+
+#########################################
+Apps and Models Used:
+1. api      - This app is build using only pure django. Includes mixings, serializing(derived from update models)
+               and class based Views. ( no authentication added). But satisfies most CRUD operations.
+2. updates  - This app contain the main model that is derived to api app. (serialization functions are also built in)
+3. status   - This app is built on Django rest framework( third party for building API).
+
 
 #########################################
 Obtaining JSON Response:

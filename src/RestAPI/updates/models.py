@@ -14,6 +14,8 @@ def upload_update_image(instance, filename):
 #          models.Queryset - 
 #          models.Model
 ##########################################
+
+
 # custom queryset manager
 class UpdateQueryset(models.QuerySet):
     # def serialize(self):
