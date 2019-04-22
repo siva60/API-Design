@@ -71,4 +71,20 @@ Delete Object
 obj = Status.object.last()
 obj.delete()
 
+'''
+Custom Serializer 
+'''
+from rest_framework import serializers
 
+
+class CustomSerializer(serializers.Serializer):
+    content = serializers.CharField()
+    email = serializers.EmailField()
+
+
+data = {"content": "New custom content for custom serializer", "email": "siva@gmail.com"}
+not_valid_obj = CustomSerializer(data=data)
+
+if not_valid_obj.is_valid():
+    data = not_valid_obj.data
+    print(data)

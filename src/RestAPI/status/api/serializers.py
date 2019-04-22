@@ -12,15 +12,12 @@ class StatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Status
         fields = [
+            'id',
             'user',
             'content',
             'image',
         ]
-
-    def validate_content(self, value):
-        if len(value) > 10:
-            raise serializers.ValidationError("Input too long")
-        return value
+        read_only_fields = ['user']  # on GET calls it can be only read only.
 
     def validate(self, data):
         content = data.get('content', None)

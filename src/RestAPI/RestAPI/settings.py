@@ -14,7 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# print(__file__)
+# print(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -24,6 +25,7 @@ SECRET_KEY = '4!g$t&#rpnk6^*m69@i-ht6p+j*@^1gth5#5=p&n6z37n#rkvw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 
 ALLOWED_HOSTS = []
 # APPEND_TRAILING_SLASH = True
@@ -126,3 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-server', 'media-root')
+MEDIA_URL = '/media/'
+# print(os.path.join(os.path.dirname(BASE_DIR)))
+
+
+from RestAPI.restconf.main import *

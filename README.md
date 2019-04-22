@@ -26,15 +26,34 @@ http://127.0.0.1:8000/api/
 
 http://127.0.0.1:8000/api/<id>
 
+*
+http://127.0.0.1:8000/status/api/  -> List
+
+http://127.0.0.1:8000/status/api/create/  -> create
+
+http://127.0.0.1:8000/status/api/<id>/ -> detail
+
+http://127.0.0.1:8000/status/api/<id>/update/  -> update
+
+http://127.0.0.1:8000/status/api/<id>/delete/  -> delete
 #########################################
 Apps and Models Used:
 1. api      - This app is build using only pure django. Includes mixings, serializing(derived from update models)
                and class based Views. ( no authentication added). But satisfies most CRUD operations.
 2. updates  - This app contain the main model that is derived to api app. (serialization functions are also built in)
-3. status   - This app is built on Django rest framework( third party for building API).
-
+3. status   - This app is built on Django rest framework( third party for building API). It's more advanced than the above.
+               the app directory have serializer implementation, views, urls and endpoint development.
 
 #########################################
+
+Authentication is setup in RestAPI/restconf/main.py. as a main module. It will be automatically 
+applied to all endpoints.
+
+In settings, add : 
+
+from RestAPI.restconf.main import *
+
+############################################
 Obtaining JSON Response:
 
 1. import json, HttpResponse

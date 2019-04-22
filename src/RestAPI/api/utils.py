@@ -4,7 +4,7 @@
 import json
 
 
-# this method just returns a boolean value
+# this method just returns a boolean value and checks if the data is valid json
 def is_json(json_data):
     try:
         real_json = json.loads(json_data)
