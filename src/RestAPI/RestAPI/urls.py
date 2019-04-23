@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'api/', include('api.urls')),
     url(r'^$', include('updates.urls')),
     url(r'status/', include('status.api.urls')),
+    url(r'accounts/', include('accounts.api.urls')),
 ]

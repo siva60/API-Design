@@ -84,10 +84,13 @@ token = r.json()['token']
 print(token)
 
 headers = {
-    "Content-Type": "application/json",
+    # "Content-Type": "application/json",
     "Authorization": "JWT" + token,
 }
 
+data = {
+    "content": "updated description"
+}
 post_data = json.dumps({"content": "Random content"})
 post_response = requests.post(BASE_URL + ENDPOINT_status, data=post_data, headers=headers)
 print(post_response.text)

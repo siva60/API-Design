@@ -44,14 +44,21 @@ Apps and Models Used:
 3. status   - This app is built on Django rest framework( third party for building API). It's more advanced than the above.
                the app directory have serializer implementation, views, urls and endpoint development.
 
+4. accounts  - Through this app custom authentication and permissions are setup.( Implemented in api dir)
 #########################################
 
 Authentication is setup in RestAPI/restconf/main.py. as a main module. It will be automatically 
 applied to all endpoints.
+Here JWT authentication is used.
 
 In settings, add : 
 
 from RestAPI.restconf.main import *
+
+To obtain the JWT Token code:
+http://127.0.0.1:8000/status/auth/jwt/
+When the credentials are sent back we get the token back.
+
 
 ############################################
 Obtaining JSON Response:
